@@ -3,6 +3,7 @@ import pygame, sys, random
 from Gamable import Gamable
 from GameState import GameState
 from IO.InputMaster import InputMaster
+from IO.FontManager import FontManager
 from constants import *
 
 from game_objects.Kanji import Kanji
@@ -10,7 +11,7 @@ from game_objects.Kanji import Kanji
 class MainGame(Gamable):
     def __init__(self, snake, kanji, points) -> None:
         super().__init__()
-        self.font = pygame.font.SysFont('msgothic', 16)
+        self.font = FontManager.get_font(font_size=16)
         self.grid_color = (71, 71, 71)
         self.snake = snake
         self.kanji = kanji

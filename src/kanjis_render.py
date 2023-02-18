@@ -1,8 +1,9 @@
 import pygame
-pygame.font.init()
-font = pygame.font.SysFont('msgothic', 16)
+from IO.FontManager import FontManager
 
-kanjis = [
+def get_kanjis():
+    font = FontManager.get_font(font_size=15)
+    return [
     font.render('一', True, (255, 255, 255)),
     font.render('二', True, (255, 255, 255)),
     font.render('三', True, (255, 255, 255)),

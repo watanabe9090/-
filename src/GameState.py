@@ -1,2 +1,2 @@
 class GameState:
-    Running, Exited, MainMenu, SettingsMenu, AudioSettingsMenu, GameOver, Paused = range(7)
+    Running, Exited, MainMenu, SettingsMenu, AudioSettingsMenu, FontSettingsMenu, GameOver, Paused = range(8)

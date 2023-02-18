@@ -3,6 +3,7 @@ import pygame, sys, random
 from Gamable import Gamable
 from GameState import GameState
 from IO.InputMaster import InputState
+from IO.FontManager import FontManager
 
 from constants import *
 
@@ -10,7 +11,7 @@ class MainMenu(Gamable):
     def __init__(self) -> None:
         super().__init__()
         self.option_index = 0
-        self.font = pygame.font.SysFont('msgothic', 16)
+        self.font = FontManager.get_font()
         self.options = [
             self.font.render('はじめ', True, (255, 255, 255)),
             self.font.render('設定', True, (255, 255, 255)),
@@ -92,7 +93,7 @@ class MainMenu(Gamable):
 
 
 
-        title_font = pygame.font.SysFont('msgothic', 48)
+        title_font = FontManager.get_font(font_size=48)
         title = title_font.render('蛇食字', True, (255, 255, 255))
         title_x = (WIDTH*BLOCK-title.get_width()) / 2
         surface.blit(title, (title_x, HEIGHT/8*BLOCK))

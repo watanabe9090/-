@@ -3,12 +3,12 @@ from Gamable import Gamable
 from GameState import GameState
 from constants import *
 
+from IO.FontManager import FontManager
 
 class GameOverMenu(Gamable):
     def __init__(self) -> None:
-        self.title_font = pygame.font.SysFont('msgothic', 64)
-        self.subtitle_font = pygame.font.SysFont('msgothic', 32)
-
+        self.title_font = FontManager.get_font(font_size=64)
+        self.subtitle_font = FontManager.get_font(font_size=32)
         self.title = self.title_font.render('ゲームオーバー', True, WHITE)
         self.subtitle = self.subtitle_font.render('エンターボタンを押して... (；′⌒`)', True, WHITE)
 
